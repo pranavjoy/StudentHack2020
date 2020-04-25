@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request
-
 from myapp.forms import QuerySearchForm
 
 app = Flask(__name__)
@@ -8,8 +7,12 @@ import re
 
 import numpy as np
 import pandas as pd
+import nltk
 
 pd.set_option('display.max_colwidth', -1)
+
+nltk.download('stopwords')
+
 from nltk.corpus import stopwords
 from scipy.spatial.distance import cosine
 
