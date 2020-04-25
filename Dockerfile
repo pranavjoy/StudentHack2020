@@ -3,7 +3,13 @@ FROM ubuntu:16.04
 RUN apt-get update -y && \
     apt-get install -y python3-pip python3-dev
 
-RUN pip3 install flask_pymongo && pip3 install flask
+RUN python3 --version
+
+RUN pip3 install --upgrade pip
+
+RUN pip3 install flask_pymongo && \
+    pip3 install flask && pip3 install numpy && \
+    pip3 install pandas && pip3 install nltk
 
 RUN apt-get install -y locales locales-all
 
